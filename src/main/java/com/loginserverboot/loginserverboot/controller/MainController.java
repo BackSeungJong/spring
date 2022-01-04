@@ -8,17 +8,19 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-//        return "/WEB-INF/views/index.jsp";
+        System.out.println("[현재위치] index" );
         return "index";
     }
 
     @GetMapping("/join")
     public String join() {
+        System.out.println("[현재위치] join" );
         return "join";
     }
 
     @GetMapping("/main")
     public String main() {
+        System.out.println("[현재위치] main" );
         return "main";
     }
 

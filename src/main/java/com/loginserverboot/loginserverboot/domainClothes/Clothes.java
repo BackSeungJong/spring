@@ -24,6 +24,7 @@ public class Clothes {
     private String img;
     private int price;
     private int cnt;
+    private String tem;
     private String category;
 
     public Clothes(ClothesRequestDto dto){
@@ -33,6 +34,7 @@ public class Clothes {
         this.img = dto.getImg();
         this.price = dto.getPrice();
         this.cnt = dto.getCnt();
+        this.tem = dto.getTem();
         this.category = dto.getCategory();
     }
 
@@ -43,6 +45,7 @@ public class Clothes {
         this.img = dto.getImg();
         this.price = dto.getPrice();
         this.cnt = dto.getCnt();
+        this.tem = dto.getTem();
         this.category = dto.getCategory();
     }
 }

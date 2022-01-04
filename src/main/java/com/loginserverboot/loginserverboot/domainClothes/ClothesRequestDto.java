@@ -12,24 +12,27 @@ public class ClothesRequestDto {
     private String img;
     private int price;
     private int cnt;
+    private String tem;
     private String category;
 
-    public ClothesRequestDto(String size, String name, String img, int price, int cnt, String category){
+    public ClothesRequestDto(String size, String name, String img, int price, int cnt,String tem, String category){
         this.size = size;
         this.name = name;
         this.img = img;
         this.price = price;
         this.cnt = cnt;
+        this.tem = tem;
         this.category = category;
     }
 
-    public ClothesRequestDto(int code, String size, String name, String img, int price, int cnt, String category){
+    public ClothesRequestDto(int code, String size, String name, String img, int price, int cnt,String tem, String category){
         this.code = code;
         this.size = size;
         this.name = name;
         this.img = img;
         this.price = price;
         this.cnt = cnt;
+        this.tem = tem;
         this.category = category;
     }
 }

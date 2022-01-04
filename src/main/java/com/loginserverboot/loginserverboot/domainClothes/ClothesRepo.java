@@ -1,4 +1,6 @@
 package com.loginserverboot.loginserverboot.domainClothes;
 
-public interface ClothesRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClothesRepo extends JpaRepository<Clothes, Integer> {
 }

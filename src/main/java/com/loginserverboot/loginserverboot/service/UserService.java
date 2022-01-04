@@ -27,10 +27,10 @@ public class UserService {
     }
 
     // 2. Read
-    public User getUser(int code){ // {}로 부터 가져온 인자를 여기다 붙여라
+    public User getUser(String id){ // {}로 부터 가져온 인자를 여기다 붙여라
         User user= null;
         //user = new User(new UserRequestDto("apple","1234","김사과"));
-        user = repo.findById(code).orElseThrow(
+        user = repo.findById(id).orElseThrow(
                 // 람다식
                 () -> new IllegalArgumentException("존재하지 않는 사용자입니다.")
         );
@@ -45,18 +45,18 @@ public class UserService {
 
     // 3. Update
     @Transactional // 기존의 테이블에 쿼리가 일어나야함을 알려줌
-    public User updateUser(int code, UserRequestDto dto){
-        User user = getUser(code);
+    public User updateUser(String id, UserRequestDto dto){
+        User user = getUser(id);
         user.update(dto);
         return user;
     }
 
     // 4. Delete
     @Transactional
-    public int deleteUser(int code){
-        User user = getUser(code);
-        repo.deleteById(user.getCode());
-        return user.getCode();
+    public String deleteUser(String id){
+        User user = getUser(id);
+        repo.deleteById(user.getId());
+        return user.getId();
     }
 
 }

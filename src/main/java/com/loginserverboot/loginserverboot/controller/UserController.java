@@ -24,10 +24,10 @@ public class UserController {
     }
 
     // 2. Read
-    @GetMapping("/v1/users/{code}") //{}에 값을 인자로 가져올 수 있따.
-    public User getUser(@PathVariable int code){ // {}로 부터 가져온 인자를 여기다 붙여라
+    @PostMapping("/v1/users/{id}") //{}에 값을 인자로 가져올 수 있따.
+    public User getUser(@PathVariable String id){ // {}로 부터 가져온 인자를 여기다 붙여라
 
-        return service.getUser(code);
+        return service.getUser(id);
     }
     // getUsers 메소드 완성 -> 디엠으로 제출 (결과값 포함해서)
     @GetMapping("/v1/users")
@@ -36,14 +36,14 @@ public class UserController {
     }
 
     // 3. Update
-    @PutMapping("/v1/users/{code}")
-    public User updateUser(@PathVariable int code,@RequestBody UserRequestDto dto){
-        return service.updateUser(code, dto);
+    @PutMapping("/v1/users/{id}")
+    public User updateUser(@PathVariable String id,@RequestBody UserRequestDto dto){
+        return service.updateUser(id, dto);
     }
 
     // 4. Delete
-    @DeleteMapping("/v1/users/{code}")
-    public int deleteUser(@PathVariable int code){
-        return service.deleteUser(code);
+    @DeleteMapping("/v1/users/{id}")
+    public String deleteUser(@PathVariable String id){
+        return service.deleteUser(id);
     }
 }
