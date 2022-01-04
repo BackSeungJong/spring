@@ -9,7 +9,13 @@ public class MainController {
     @GetMapping("/")
     public String index() {
         System.out.println("[현재위치] index" );
-        return "index";
+        return "main";
+    }
+
+    @GetMapping("/board")
+    public String board() {
+        System.out.println("[현재위치] board" );
+        return "board";
     }
 
     @GetMapping("/join")
@@ -17,21 +23,4 @@ public class MainController {
         System.out.println("[현재위치] join" );
         return "join";
     }
-
-    @GetMapping("/main")
-    public String main() {
-        System.out.println("[현재위치] main" );
-        return "main";
-    }
-
-    @GetMapping("/header")
-    public String header() {
-        return "header";
-    }
-
-    @GetMapping("/footer")
-    public String footer() {
-        return "footer";
-    }
-
 }
